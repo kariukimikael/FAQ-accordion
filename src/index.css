@@ -1,0 +1,168 @@
+/*----------------------- FONT ------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ----------------------- Andy Bell CSS Resets ------------------------- */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100dvh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/*-------------------- CUSTOM STYLES -----------------------*/
+:root{
+  /*----- TYPOGRAPHY ------*/
+  --font-family: "Work Sans", sans-serif;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fs-body: 1rem;
+  --fs-heading-one:2.975rem;
+  --fs-heading-two: 1.065rem;
+
+  /*----- COLOR VALUES ------*/
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+}
+body{
+  background: url(assets/images/background-pattern-desktop.svg) no-repeat;
+  background-color: var(--light-pink) !important;
+  background-position: top;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+.container-wrap{
+  font-family: var(--font-family);
+  width: 640px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: .5em;
+  overflow: hidden;
+  background: var(--white);
+  padding: .5em;
+  box-shadow: 0px 0px 16px 0px var(--dark-purple);
+}
+.heading-wrap{
+  display: flex;
+  gap: 1.2em;
+}
+.heading-wrap h1{
+  font-size: var(--fs-heading-one);
+  font-weight: var(--fw-bold);
+}
+h2.accordion-header button{
+  font-size: var(--fs-heading-two);
+  font-weight: var(--fw-semibold);
+  font-family: var(--font-family);
+}
+.accordion-body{
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+}
+.accordion-button::after{
+  background-image: url(assets/icons/icon-plus.svg) !important;
+}
+.accordion-button:not(.collapsed)::after{
+  background-image: url(assets/icons/icon-minus.svg) !important;
+}
+@media(max-width: 650px){
+  .container-wrap{
+    width: 96%;
+  }
+}
+@media(max-width: 475px){
+  body{
+    background: url(assets/images/background-pattern-mobile.svg) no-repeat;
+    background-position: top;
+    background-size: 100%;
+  }
+}
