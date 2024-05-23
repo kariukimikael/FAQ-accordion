@@ -7,7 +7,7 @@
 4. Using Bootstrap components and stylings to make development faster and easier.
 
 ### Links
-- Solution URL: [Github Repo]()
+- Solution URL: [Github Repo](https://github.com/kariukimikael/FAQ-accordion)
 - Live Site URL: [live site URL]()
 
 ## Tech Stack
